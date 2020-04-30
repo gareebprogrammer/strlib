@@ -2,15 +2,15 @@
 #include<stdio.h>
 
 int main(){
-    struct String *l = create_string_from("Is this works with string_clone");
+    String *l = create_string_from((char *)"Is this works with string_clone");
     printf("%s\n", get_string_pointer(l));
     printf("Sizeof string : %d\n", get_string_size(l));
-    struct String *cpy = string_clone(l);
+    String *cpy = string_clone(l);
   
     printf("%s\n", get_string_pointer(cpy));
     printf("Sizeof string : %d\n", get_string_size(cpy));
     
-    struct String *o = create_string_from("OK");
+    String *o = create_string_from((char *)"OK");
 
     int eq = string_equals(l,o);
     
