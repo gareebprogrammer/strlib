@@ -2,3 +2,5 @@
 strlib
 strlibc
 strlibcpp
+main.c
+main_test.cpp

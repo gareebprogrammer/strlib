@@ -2,27 +2,22 @@
 #include<stdio.h>
 
 int main(){
-    struct String *l = create_string_from("Is this works with string_clone");
-    printf("%s\n", get_string_pointer(l));
-    printf("Sizeof string : %d\n", get_string_size(l));
-    struct String *cpy = string_clone(l);
-  
-    printf("%s\n", get_string_pointer(cpy));
-    printf("Sizeof string : %d\n", get_string_size(cpy));
     
-    struct String *o = create_string_from("OK");
-
-    int eq = string_equals(l,o);
+    struct String **str_arr = (struct String **)malloc(100000000 * sizeof(struct String));
     
-    if(eq){
-	printf("Same Strings\n");
-    }else{
-	printf("Different strings\n");
+    for(int i=0;i<100000000;i++){
+        str_arr[i] = create_string_from("HI");
     }
-    
-    free_string(o);
-    free_string(l);
-    free_string(cpy);
+
+    // for(int i=0;i<100;i++){
+        // printf("%s\n",get_string_pointer(str_arr[i]));
+    // }
+
+    for(int i=0;i<100000000;i++){
+        free_string(str_arr[i]);
+    }
+
+    free(str_arr);
 
     return 0;
 }
