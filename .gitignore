@@ -1,6 +1,7 @@
+main.c
+main_test.cpp
 *.swp
 strlib
 strlibc
 strlibcpp
-main.c
-main_test.cpp
+
